@@ -1,28 +1,44 @@
 {{ "<!-- Footer section -->" | safeHTML }}
 <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <span class="copyright">{{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ end }}</span>
-      </div>
-      <div class="col-md-4">
-        <ul class="list-inline social-buttons">
+  <section id="socials">
+    <div class="container">
+      <div class="row">
+<!--         <div class="col-md-4">
+          <span class="copyright">{{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ end }}</span>
+        </div> -->
+        <div class="col-lg-12 text-center">
+                  <h2 class="section-heading">{{ with .Site.Params.footer.title }}{{ . | markdownify }}{{ end }}</h2>
+          <h3 class="section-subheading text-muted">{{ with .Site.Params.footer.subtitle }}{{ . | markdownify }}{{ end }}</h3>
+       
 
-          {{ range .Site.Params.footer.social }}
-            <li><a href="{{ .link }}"><i class="fa {{ .icon }}"></i></a></li>
-          {{ end }}
+<!--          <span class="copyright">{{ with .Site.Params.footer.copyright }}{{ . | markdownify }}{{ end }}</span>
+-->          
+          <ul class="list-inline social-buttons">
 
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <ul class="list-inline quicklinks">
+            {{ range .Site.Params.footer.social }}
+              <li><a href="{{ .link }}"><i class="fa {{ .icon }}"></i></a></li>
+            {{ end }}
 
-          {{ range .Site.Params.footer.quicklinks }}
-            <li><a href="{{ .link }}">{{ .text  | markdownify }}</a></li>
-          {{ end }}
+          </ul>
 
-        </ul>
+            <ul class="list-inline quicklinks">
+
+              {{ range .Site.Params.footer.quicklinks }}
+                <li><a href="{{ .link }}">{{ .text  | markdownify }}</a></li>
+              {{ end }}
+
+            </ul>
+        </div>
+<!--         <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+
+            {{ range .Site.Params.footer.quicklinks }}
+              <li><a href="{{ .link }}">{{ .text  | markdownify }}</a></li>
+            {{ end }}
+
+          </ul>
+        </div> -->
       </div>
     </div>
-  </div>
+  </section>
 </footer>

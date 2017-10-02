@@ -1,7 +1,6 @@
 {{ "<!-- Navigation -->" | safeHTML }}
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
-
     {{ "<!-- Brand and toggle get grouped for better mobile display -->" | safeHTML }}
     <div class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -41,15 +40,15 @@
           </li>
         {{ end }}
 
-        {{ if .Site.Params.portfolio.enable }}
-          <li>
-            <a class="page-scroll" href="{{ .Site.BaseURL }}#portfolio">{{ with .Site.Params.navigation.portfolio }}{{ . }}{{ end }}</a>
-          </li>
-        {{ end }}
-
         {{ if .Site.Params.about.enable }}
           <li>
             <a class="page-scroll" href="{{ .Site.BaseURL }}#about">{{ with .Site.Params.navigation.about }}{{ . }}{{ end }}</a>
+          </li>
+        {{ end }}
+
+        {{ if .Site.Params.portfolio.enable }}
+          <li>
+            <a class="page-scroll" href="{{ .Site.BaseURL }}#portfolio">{{ with .Site.Params.navigation.portfolio }}{{ . }}{{ end }}</a>
           </li>
         {{ end }}
 
@@ -62,6 +61,12 @@
         {{ if .Site.Params.contact.enable }}
           <li>
             <a class="page-scroll" href="{{ .Site.BaseURL }}#contact">{{ with .Site.Params.navigation.contact }}{{ . }}{{ end }}</a>
+          </li>
+        {{ end }}
+
+        {{ if .Site.Params.footer.enable }}
+          <li>
+            <a class="page-scroll" href="{{ .Site.BaseURL }}#socials">{{ with .Site.Params.navigation.footer }}{{ . }}{{ end }}</a>
           </li>
         {{ end }}
 
